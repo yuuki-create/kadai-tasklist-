@@ -75,15 +75,7 @@ public class CreateServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/index");
             }
 
-            em.getTransaction().begin();
-            em.persist(m);
-            em.getTransaction().commit();
-         // データベースに保存
 
-            request.getSession().setAttribute("flush", "登録が完了しました。");       // ここを追記
-            em.close();
-
-            response.sendRedirect(request.getContextPath() + "/index");
         }
     }
 
